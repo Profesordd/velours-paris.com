@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className="bg-[#1C1C1C] text-white mt-0">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Col 1 – Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
               <span className="text-[13px] font-black tracking-[0.3em] uppercase text-white">
@@ -14,7 +13,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-              Peignoirs homme et femme d'exception. Fabrication européenne, matières nobles, livraison gratuite en France.
+              Peignoirs d'exception fabriqués en Europe. Coton éponge, velours, nid d'abeille — la douceur du luxe au quotidien.
             </p>
             <div className="flex items-center gap-2">
               {["VISA", "MC", "CB"].map((c) => (
@@ -25,16 +24,15 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 – Collections */}
           <div>
-            <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.25em] mb-5">Collections</p>
+            <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.25em] mb-5">Collection</p>
             <ul className="space-y-3">
               {[
-                { href: "/boutique?collection=homme", label: "Collection Homme" },
-                { href: "/boutique?collection=femme", label: "Collection Femme" },
-                { href: "/boutique", label: "Toute la boutique" },
+                { href: "/boutique", label: "Les Peignoirs" },
+                { href: "/boutique", label: "Nouveautés" },
+                { href: "/boutique", label: "Bestsellers" },
               ].map((l) => (
-                <li key={l.href}>
+                <li key={l.label}>
                   <Link href={l.href} className="text-white/60 hover:text-white text-sm transition-colors tracking-wide">
                     {l.label}
                   </Link>
@@ -43,7 +41,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3 – Infos & Contact */}
           <div>
             <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.25em] mb-5">Informations</p>
             <ul className="space-y-3 mb-6">

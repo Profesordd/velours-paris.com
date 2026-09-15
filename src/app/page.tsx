@@ -8,26 +8,20 @@ import { ArrowRight, Truck, RotateCcw, Shield } from "lucide-react";
 const U = (id: string, w = 800) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=85`;
 
-// Verified CDN IDs
-const HERO   = U("1535272126276-63decfb8c4d7", 1920); // woman white bathrobe on terrace
-const EDITO1 = U("1623120594168-a6d35474043b");        // man in bathrobe with drink
-const EDITO2 = U("1770294759101-fae1377d4d34");        // woman in white bathrobe wooden wall
-const EDITO3 = U("1609535895148-cf9f5c446290");        // smiling woman bathrobe with mug
+const HERO   = U("1535272126276-63decfb8c4d7", 1920);
+const EDITO1 = U("1623120594168-a6d35474043b");
+const EDITO2 = U("1770294759101-fae1377d4d34");
+const EDITO3 = U("1609535895148-cf9f5c446290");
 
 export default function HomePage() {
   const bestSellers = products.filter((p) => p.badge === "BESTSELLER");
+  const newArrivals = products.filter((p) => p.badge === "NOUVEAU");
 
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section className="relative h-screen flex items-center md:items-end overflow-hidden">
-        <Image
-          src={HERO}
-          alt="Velours Paris"
-          fill
-          className="object-cover object-center"
-          priority
-        />
+        <Image src={HERO} alt="Velours Paris" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10" />
 
         <div className="relative z-10 px-8 md:px-16 lg:px-24 pb-0 md:pb-28 w-full max-w-4xl">
@@ -38,21 +32,13 @@ export default function HomePage() {
             L'ART<br />DE LA<br />DOUCEUR.
           </h1>
           <p className="fade-in-up d600 text-white/65 text-sm md:text-base max-w-sm mb-10 leading-relaxed">
-            Peignoirs homme et femme en coton, velours et satin.<br />
+            Coton éponge, velours, nid d'abeille.<br />
             Fabriqués en Europe, pour s'accorder du temps.
           </p>
           <div className="fade-in-up d800 flex flex-wrap gap-4">
-            <Link
-              href="/boutique"
-              className="bg-white text-[#1C1C1C] px-8 py-3.5 font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-[#F5F1E8] transition-colors inline-flex items-center gap-2"
-            >
-              Découvrir la collection <ArrowRight size={12} />
-            </Link>
-            <Link
-              href="/boutique?collection=femme"
-              className="border border-white/40 text-white px-8 py-3.5 font-medium text-[10px] tracking-[0.2em] uppercase hover:border-white transition-colors"
-            >
-              Collection Femme
+            <Link href="/boutique"
+              className="bg-white text-[#1C1C1C] px-8 py-3.5 font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-[#F5F1E8] transition-colors inline-flex items-center gap-2">
+              Découvrir les peignoirs <ArrowRight size={12} />
             </Link>
           </div>
         </div>
@@ -61,7 +47,7 @@ export default function HomePage() {
           <div className="ticker-content text-white/40 text-[9px] uppercase tracking-[0.3em] font-medium">
             {Array.from({ length: 8 }).map((_, i) => (
               <span key={i} className="mr-16">
-                Velours Paris &nbsp;·&nbsp; Coton Éponge &nbsp;·&nbsp; Fabrication Européenne &nbsp;·&nbsp; Livraison Offerte &nbsp;·&nbsp; Retours Gratuits
+                Velours Paris &nbsp;·&nbsp; Coton 550 g/m² &nbsp;·&nbsp; Fabrication Européenne &nbsp;·&nbsp; Livraison Offerte &nbsp;·&nbsp; Retours Gratuits 30 jours
               </span>
             ))}
           </div>
@@ -86,68 +72,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SÉLECTION BESTSELLERS ─────────────────────────────────── */}
+      {/* ── BESTSELLERS ───────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-3">
-              Nos incontournables
-            </p>
-            <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-black text-[#1C1C1C] leading-tight">
-              Les Bestsellers
-            </h2>
+            <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-3">Nos incontournables</p>
+            <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-black text-[#1C1C1C] leading-tight">Les Bestsellers</h2>
           </div>
-          <Link
-            href="/boutique"
-            className="hidden md:flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase font-semibold text-[#7A7670] hover:text-[#1C1C1C] transition-colors"
-          >
+          <Link href="/boutique"
+            className="hidden md:flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase font-semibold text-[#7A7670] hover:text-[#1C1C1C] transition-colors">
             Tout voir <ArrowRight size={12} />
           </Link>
         </div>
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-8">
-          {bestSellers.map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/boutique"
-            className="inline-flex items-center gap-2 border border-[#1C1C1C] text-[#1C1C1C] px-10 py-3.5 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-[#1C1C1C] hover:text-white transition-colors"
-          >
-            Voir toute la boutique <ArrowRight size={12} />
-          </Link>
+          {bestSellers.map((p) => <ProductCard key={p.slug} product={p} />)}
         </div>
       </section>
 
-      {/* ── ÉDITO 1 : Homme ──────────────────────────────────────── */}
+      {/* ── ÉDITO 1 ──────────────────────────────────────────────── */}
       <section className="bg-[#F5F1E8] border-y border-[#E8E3DA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 min-h-[560px]">
             <div className="relative min-h-[400px] md:min-h-full overflow-hidden">
-              <Image
-                src={EDITO1}
-                alt="Collection Homme"
-                fill
-                className="object-cover object-center"
-                unoptimized
-              />
+              <Image src={EDITO1} alt="Peignoir moelleux" fill className="object-cover object-center" unoptimized />
             </div>
             <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-[#F5F1E8]">
-              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Collection Homme</p>
+              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Coton Éponge</p>
               <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1C1C1C] leading-tight mb-6">
-                Le confort<br />sans compromis.
+                Le moelleux<br />signature.
               </h2>
               <p className="text-[#7A7670] text-sm leading-relaxed mb-8 max-w-sm">
-                Éponge épaisse, waffle léger, velours nuit, kimono lin —
-                nos peignoirs homme sont conçus pour transformer chaque moment
-                après la douche en rituel de bien-être.
+                Nos peignoirs moelleux en coton 550 g/m² sont conçus pour une douceur
+                maximale dès la première utilisation. Bouclettes longues, tombé généreux,
+                coloris tissés — ils ne se déforment pas et ne décolorent pas au lavage.
               </p>
-              <Link
-                href="/boutique?collection=homme"
-                className="self-start inline-flex items-center gap-2 bg-[#1C1C1C] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity"
-              >
+              <Link href="/boutique"
+                className="self-start inline-flex items-center gap-2 bg-[#1C1C1C] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity">
                 Voir la collection <ArrowRight size={12} />
               </Link>
             </div>
@@ -155,54 +115,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── ÉDITO 2 : Femme ──────────────────────────────────────── */}
+      {/* ── NOUVEAUTÉS ────────────────────────────────────────────── */}
+      {newArrivals.length > 0 && (
+        <section className="max-w-7xl mx-auto px-6 py-20">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-3">Vient d'arriver</p>
+              <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-black text-[#1C1C1C] leading-tight">Les Nouveautés</h2>
+            </div>
+            <Link href="/boutique"
+              className="hidden md:flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase font-semibold text-[#7A7670] hover:text-[#1C1C1C] transition-colors">
+              Tout voir <ArrowRight size={12} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-8">
+            {newArrivals.map((p) => <ProductCard key={p.slug} product={p} />)}
+          </div>
+        </section>
+      )}
+
+      {/* ── ÉDITO 2 ──────────────────────────────────────────────── */}
       <section className="border-b border-[#E8E3DA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 min-h-[560px]">
             <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-white order-2 md:order-1">
-              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Collection Femme</p>
-              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1C1C1C] leading-tight mb-6">
-                Douceur,<br />légèreté, style.
-              </h2>
-              <p className="text-[#7A7670] text-sm leading-relaxed mb-8 max-w-sm">
-                Coton douceur, satin ivoire, velours long, peignoir court —
-                chaque modèle est une invitation à prendre soin de soi.
-                Des matières nobles, des coupes pensées pour les femmes.
-              </p>
-              <Link
-                href="/boutique?collection=femme"
-                className="self-start inline-flex items-center gap-2 border border-[#1C1C1C] text-[#1C1C1C] text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:bg-[#1C1C1C] hover:text-white transition-colors"
-              >
-                Voir la collection <ArrowRight size={12} />
-              </Link>
-            </div>
-            <div className="relative min-h-[400px] md:min-h-full overflow-hidden order-1 md:order-2">
-              <Image
-                src={EDITO2}
-                alt="Collection Femme"
-                fill
-                className="object-cover object-center"
-                unoptimized
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── ÉDITO 3 : Rituel ─────────────────────────────────────── */}
-      <section className="bg-[#F5F1E8] border-b border-[#E8E3DA]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 min-h-[560px]">
-            <div className="relative min-h-[400px] md:min-h-full overflow-hidden">
-              <Image
-                src={EDITO3}
-                alt="Rituel bien-être"
-                fill
-                className="object-cover object-center"
-                unoptimized
-              />
-            </div>
-            <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-[#F5F1E8]">
               <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Notre philosophie</p>
               <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1C1C1C] leading-tight mb-6">
                 S'accorder<br />du temps.
@@ -212,11 +148,38 @@ export default function HomePage() {
                 Chez Velours Paris, chaque pièce est pensée pour durer,
                 envelopper et réchauffer — bien au-delà de la salle de bain.
               </p>
-              <Link
-                href="/boutique"
-                className="self-start inline-flex items-center gap-2 bg-[#1C1C1C] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity"
-              >
+              <Link href="/boutique"
+                className="self-start inline-flex items-center gap-2 border border-[#1C1C1C] text-[#1C1C1C] text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:bg-[#1C1C1C] hover:text-white transition-colors">
                 Découvrir tous les modèles <ArrowRight size={12} />
+              </Link>
+            </div>
+            <div className="relative min-h-[400px] md:min-h-full overflow-hidden order-1 md:order-2">
+              <Image src={EDITO2} alt="Velours Paris" fill className="object-cover object-center" unoptimized />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ÉDITO 3 ──────────────────────────────────────────────── */}
+      <section className="bg-[#F5F1E8] border-b border-[#E8E3DA]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 min-h-[480px]">
+            <div className="relative min-h-[360px] md:min-h-full overflow-hidden">
+              <Image src={EDITO3} alt="Rituel bien-être" fill className="object-cover object-center" unoptimized />
+            </div>
+            <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-[#F5F1E8]">
+              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Nid d'Abeille & Velours</p>
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1C1C1C] leading-tight mb-6">
+                Pour chaque<br />moment.
+              </h2>
+              <p className="text-[#7A7670] text-sm leading-relaxed mb-8 max-w-sm">
+                Léger en été avec notre nid d'abeille 375 g/m², chaleureux en hiver
+                avec notre velours de coton 480 g/m² — chaque modèle a sa saison,
+                chaque saison a son peignoir.
+              </p>
+              <Link href="/boutique"
+                className="self-start inline-flex items-center gap-2 bg-[#1C1C1C] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity">
+                Voir tous les modèles <ArrowRight size={12} />
               </Link>
             </div>
           </div>
@@ -231,10 +194,10 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { label: "Matières Nobles", desc: "Coton éponge 500 g/m², velours côtelé, satin modal, lin — uniquement des textiles de premier choix." },
-            { label: "Fabrication Européenne", desc: "Nos peignoirs sont produits dans des ateliers en Europe selon des normes strictes de qualité et d'éthique." },
-            { label: "Coupe Soignée", desc: "Chaque modèle est coupé pour s'adapter au corps : col châle, ceinture réglable, poches profondes." },
-            { label: "Garantie 30 jours", desc: "Vous disposez de 30 jours pour retourner votre peignoir, sans questions. Retours entièrement gratuits." },
+            { label: "Coton 550 g/m²", desc: "Un grammage élevé pour une douceur maximale et une absorption optimale dès la première utilisation." },
+            { label: "Fabrication Européenne", desc: "Produits dans des ateliers en Europe selon des normes strictes de qualité et de conditions de travail." },
+            { label: "Coloris Tissés", desc: "Nos couleurs sont intégrées au fil du tissage — elles ne décolorent pas au lavage et restent intenses dans le temps." },
+            { label: "Retours 30 Jours", desc: "30 jours pour essayer votre peignoir chez vous. Si vous n'êtes pas satisfait, on reprend les frais de retour." },
           ].map((v) => (
             <div key={v.label} className="text-center">
               <div className="flex justify-center mb-4">
