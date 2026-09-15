@@ -3,14 +3,37 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ShoppingCart, Menu, X } from "lucide-react";
+import { Cormorant_Garamond } from "next/font/google";
 import { useCart } from "@/context/CartContext";
 import CartDrawer from "./CartDrawer";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 const navItems = [
   { href: "/boutique", label: "Les Peignoirs" },
   { href: "/suivre-commande", label: "Suivi de commande" },
   { href: "/contact", label: "Contact" },
 ];
+
+function Logo({ onClick }: { onClick?: () => void }) {
+  return (
+    <Link href="/" onClick={onClick} className="flex flex-col items-center group hover:opacity-75 transition-opacity">
+      <span className={`${cormorant.className} text-[26px] font-light italic tracking-[0.08em] text-[#1C1C1C] leading-none`}>
+        Velours
+      </span>
+      <span className="flex items-center gap-1.5 mt-[3px]">
+        <span className="block h-px w-4 bg-[#B8963E]" />
+        <span className="text-[7px] font-bold tracking-[0.55em] uppercase text-[#B8963E]">Paris</span>
+        <span className="block h-px w-4 bg-[#B8963E]" />
+      </span>
+    </Link>
+  );
+}
 
 export default function Header() {
   const { count, total } = useCart();
@@ -29,9 +52,7 @@ export default function Header() {
           </nav>
 
           <div className="flex justify-center">
-            <Link href="/" className="text-[13px] font-black tracking-[0.3em] uppercase text-[#1C1C1C] hover:opacity-70 transition-opacity">
-              Velours Paris
-            </Link>
+            <Logo />
           </div>
 
           <div className="flex items-center justify-end gap-6">
@@ -72,10 +93,7 @@ export default function Header() {
           className="fixed inset-0 z-[60] bg-[#FAFAF8] flex flex-col"
         >
           <div className="flex items-center justify-between px-6 h-16 border-b border-[#E8E3DA]" style={{ marginTop: "36px" }}>
-            <Link href="/" className="text-[13px] font-black tracking-[0.3em] uppercase text-[#1C1C1C]"
-              onClick={() => setMenuOpen(false)}>
-              Velours Paris
-            </Link>
+            <Logo onClick={() => setMenuOpen(false)} />
             <button onClick={() => setMenuOpen(false)} className="text-[#1C1C1C]">
               <X size={22} strokeWidth={1.5} />
             </button>
