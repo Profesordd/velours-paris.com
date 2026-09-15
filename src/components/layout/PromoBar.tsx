@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 
 const messages = [
   "Livraison offerte en France",
-  "Cuir pleine fleur — garanti à vie",
-  "Fabrication artisanale française",
+  "Peignoirs fabriqués en Europe",
+  "Retours gratuits sous 30 jours",
 ];
 
 export default function PromoBar() {
@@ -24,7 +24,7 @@ export default function PromoBar() {
   }, []);
 
   return (
-    <div className="sticky top-0 z-40 bg-[#1A1410] text-white h-9 flex items-center justify-center overflow-hidden">
+    <div className="sticky top-0 z-40 bg-[#1C1C1C] text-white h-9 flex items-center justify-center overflow-hidden">
       <span
         className={`text-[10px] tracking-[0.22em] uppercase whitespace-nowrap transition-opacity duration-300 ${fade ? "opacity-100" : "opacity-0"}`}
       >

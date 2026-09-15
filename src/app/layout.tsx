@@ -13,15 +13,15 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sellier Paris — Maroquinerie française d'exception",
+  title: "Velours Paris — Peignoirs d'exception",
   description:
-    "Ceintures, sacs et petite maroquinerie en cuir pleine fleur. Fabrication artisanale française. Livraison gratuite en France.",
+    "Peignoirs homme et femme fabriqués en Europe. Éponge, velours, satin, waffle — la douceur du luxe au quotidien. Livraison gratuite en France.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={`${geistSans.variable} bg-white text-[#1A1410]`}>
+      <body className={`${geistSans.variable} bg-[#FAFAF8] text-[#1C1C1C]`}>
         <CartProvider>
           <PromoBar />
           <Header />

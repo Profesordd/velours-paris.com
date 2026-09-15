@@ -13,15 +13,15 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: #1A1410;
+  background-color: #FAFAF8;
+  color: #1C1C1C;
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #f5f1eb; }
-::-webkit-scrollbar-thumb { background: #c8bfb0; border-radius: 0; }
+::-webkit-scrollbar-track { background: #F5F1E8; }
+::-webkit-scrollbar-thumb { background: #C8C0B0; border-radius: 0; }
 
 /* Ticker */
 @keyframes ticker {

@@ -13,16 +13,16 @@ const faqs = [
     answer: "Oui, la livraison est entièrement gratuite en France pour toutes les commandes, sans minimum d'achat.",
   },
   {
-    question: "Comment choisir la taille de ma ceinture ?",
-    answer: "La taille d'une ceinture correspond à la longueur totale du cuir (de l'embout à la boucle). Pour connaître votre taille, mesurez le tour de votre taille et ajoutez 15 à 20 cm. Exemple : tour de taille 80 cm → ceinture taille 95 ou 100.",
+    question: "Comment choisir la bonne taille de peignoir ?",
+    answer: "Nos peignoirs sont disponibles en XS, S, M, L et XL (XS/S/M/L pour la collection femme). En cas de doute, choisissez la taille supérieure pour plus de confort. Les tailles sont standards européennes : S (36-38), M (40-42), L (44-46), XL (48-50).",
+  },
+  {
+    question: "Comment laver mon peignoir ?",
+    answer: "Cela dépend du modèle. Les peignoirs en éponge et coton se lavent à 60 °C en machine. Les modèles velours sont recommandés à 30 °C. Le satin ivoire est à laver en cycle délicat à 30 °C ou au nettoyage à sec. Consultez l'étiquette de votre peignoir pour les instructions précises.",
   },
   {
     question: "Puis-je retourner un article ?",
-    answer: "Oui, vous disposez de 30 jours pour nous retourner un article non porté et dans son emballage d'origine. Les frais de retour sont entièrement pris en charge par Sellier Paris. Contactez-nous à contact@sellier-paris.com pour initier un retour.",
-  },
-  {
-    question: "Comment entretenir mon cuir ?",
-    answer: "Appliquez une crème nourrissante incolore tous les 3 à 6 mois selon l'usage. Évitez l'eau stagnante et séchez à l'air naturellement si votre pièce est mouillée. Ne pas utiliser de cirage de couleur sur le cuir naturel.",
+    answer: "Oui, vous disposez de 30 jours pour nous retourner un article non porté et dans son emballage d'origine. Les frais de retour sont entièrement pris en charge par Velours Paris. Contactez-nous à contact@velours-paris.com pour initier un retour.",
   },
   {
     question: "Les paiements sont-ils sécurisés ?",
@@ -38,16 +38,16 @@ function FAQItem({ faq, isOpen, onToggle }: {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="border-b border-[#E5DDD0] last:border-0">
+    <div className="border-b border-[#E8E3DA] last:border-0">
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-[#F7F1E8] transition-colors cursor-pointer"
+        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-[#F5F1E8] transition-colors cursor-pointer"
       >
-        <span className="text-[#1A1410] text-sm font-semibold pr-4">{faq.question}</span>
+        <span className="text-[#1C1C1C] text-sm font-semibold pr-4">{faq.question}</span>
         <ChevronDown
           size={15}
-          className="text-[#8A7A6A] flex-shrink-0 transition-transform duration-200"
+          className="text-[#7A7670] flex-shrink-0 transition-transform duration-200"
           style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
         />
       </button>
@@ -59,7 +59,7 @@ function FAQItem({ faq, isOpen, onToggle }: {
           transition: "height 0.3s ease",
         }}
       >
-        <p className="px-5 pb-5 text-[#8A7A6A] text-sm leading-relaxed">{faq.answer}</p>
+        <p className="px-5 pb-5 text-[#7A7670] text-sm leading-relaxed">{faq.answer}</p>
       </div>
     </div>
   );
@@ -71,7 +71,7 @@ export default function FAQAccordion() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <div className="border border-[#E5DDD0] overflow-hidden">
+    <div className="border border-[#E8E3DA] overflow-hidden">
       {faqs.map((faq, i) => (
         <FAQItem
           key={i}

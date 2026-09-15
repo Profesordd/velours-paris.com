@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-export const metadata = { title: "CGV — Sellier Paris" };
+export const metadata = { title: "CGV — Velours Paris" };
 
 const articles = [
   {
     title: "1. Vendeur",
-    text: "Le présent site est exploité par la société LOUIS DAVID-BATY SASU, SASU au capital de 100 € — SIREN 108 220 310 — Siège : 10 rue Jean Jaurès, 86000 Poitiers — N° TVA : FR02108220310. Contact : contact@sellier-paris.com",
+    text: "Le présent site est exploité par la société Velours Paris. Contact : contact@velours-paris.com",
   },
   {
     title: "2. Prix",
-    text: "Tous les prix sont indiqués en euros TTC. LOUIS DAVID-BATY SASU se réserve le droit de modifier ses prix à tout moment. Les produits sont facturés au tarif en vigueur lors de la validation de la commande.",
+    text: "Tous les prix sont indiqués en euros TTC. Velours Paris se réserve le droit de modifier ses prix à tout moment. Les produits sont facturés au tarif en vigueur lors de la validation de la commande.",
   },
   {
     title: "3. Commande",
@@ -30,7 +30,7 @@ const articles = [
   },
   {
     title: "7. Retours & remboursements",
-    text: "Sellier Paris offre une garantie satisfait ou remboursé de 30 jours. Les frais de retour sont pris en charge par nos soins. Contactez-nous à contact@sellier-paris.com pour initier un retour. Le remboursement est effectué sous 5 à 7 jours ouvrés après réception de l'article.",
+    text: "Velours Paris offre une garantie satisfait ou remboursé de 30 jours. Les frais de retour sont pris en charge par nos soins. Contactez-nous à contact@velours-paris.com pour initier un retour. Le remboursement est effectué sous 5 à 7 jours ouvrés après réception de l'article.",
   },
   {
     title: "8. Garantie légale",
@@ -38,31 +38,31 @@ const articles = [
   },
   {
     title: "9. Service client",
-    text: "Notre service client est disponible 7j/7 à l'adresse contact@sellier-paris.com. Réponse garantie sous 24h ouvrées.",
+    text: "Notre service client est disponible 7j/7 à l'adresse contact@velours-paris.com. Réponse garantie sous 24h ouvrées.",
   },
   {
     title: "10. Droit applicable",
-    text: "Les présentes CGV sont soumises au droit français. Tout litige relatif à leur interprétation ou exécution sera soumis aux tribunaux compétents de Poitiers.",
+    text: "Les présentes CGV sont soumises au droit français. Tout litige relatif à leur interprétation ou exécution sera soumis aux tribunaux compétents français.",
   },
 ];
 
 export default function CGVPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <nav className="flex items-center gap-1.5 text-[10px] text-[#8A7A6A] mb-8 uppercase tracking-[0.1em]">
-        <Link href="/" className="hover:text-[#1A1410] transition-colors">Accueil</Link>
+      <nav className="flex items-center gap-1.5 text-[10px] text-[#7A7670] mb-8 uppercase tracking-[0.1em]">
+        <Link href="/" className="hover:text-[#1C1C1C] transition-colors">Accueil</Link>
         <ChevronRight size={10} />
-        <span className="text-[#1A1410] font-medium">CGV</span>
+        <span className="text-[#1C1C1C] font-medium">CGV</span>
       </nav>
 
-      <h1 className="text-[clamp(1.5rem,3vw,2rem)] font-black text-[#1A1410] mb-10">
+      <h1 className="text-[clamp(1.5rem,3vw,2rem)] font-black text-[#1C1C1C] mb-10">
         Conditions Générales de Vente
       </h1>
 
-      <div className="space-y-8 text-sm text-[#8A7A6A] leading-relaxed">
+      <div className="space-y-8 text-sm text-[#7A7670] leading-relaxed">
         {articles.map(({ title, text }) => (
           <section key={title}>
-            <h2 className="text-[11px] font-bold text-[#1A1410] uppercase tracking-[0.2em] mb-3 pb-2 border-b border-[#E5DDD0]">
+            <h2 className="text-[11px] font-bold text-[#1C1C1C] uppercase tracking-[0.2em] mb-3 pb-2 border-b border-[#E8E3DA]">
               {title}
             </h2>
             <p>{text}</p>

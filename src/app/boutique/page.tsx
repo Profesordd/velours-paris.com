@@ -8,9 +8,8 @@ import { Suspense } from "react";
 
 const collections = [
   { key: "", label: "Tout" },
-  { key: "ceintures", label: "Ceintures" },
-  { key: "sacs", label: "Sacs" },
-  { key: "petite-maroquinerie", label: "Petite Maroquinerie" },
+  { key: "homme", label: "Homme" },
+  { key: "femme", label: "Femme" },
 ];
 
 const sortOptions = [
@@ -39,14 +38,14 @@ function BoutiqueContent() {
     <div className="max-w-7xl mx-auto px-6 py-14">
       {/* Header */}
       <div className="mb-10">
-        <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#C08040] mb-3">Maroquinerie</p>
-        <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-black text-[#1A1410] leading-tight">
+        <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-3">Peignoirs</p>
+        <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-black text-[#1C1C1C] leading-tight">
           La Boutique
         </h1>
       </div>
 
       {/* Filtres + tri */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E5DDD0]">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E8E3DA]">
         <div className="flex flex-wrap gap-2">
           {collections.map((c) => (
             <button
@@ -54,8 +53,8 @@ function BoutiqueContent() {
               onClick={() => setActiveCollection(c.key)}
               className={`px-4 py-2 text-[10px] font-semibold tracking-[0.15em] uppercase transition-colors ${
                 activeCollection === c.key
-                  ? "bg-[#1A1410] text-white"
-                  : "border border-[#E5DDD0] text-[#8A7A6A] hover:border-[#1A1410] hover:text-[#1A1410]"
+                  ? "bg-[#1C1C1C] text-white"
+                  : "border border-[#E8E3DA] text-[#7A7670] hover:border-[#1C1C1C] hover:text-[#1C1C1C]"
               }`}
             >
               {c.label}
@@ -65,7 +64,7 @@ function BoutiqueContent() {
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="border border-[#E5DDD0] text-[#8A7A6A] text-[10px] tracking-[0.1em] uppercase px-3 py-2 bg-white outline-none focus:border-[#1A1410] transition-colors"
+          className="border border-[#E8E3DA] text-[#7A7670] text-[10px] tracking-[0.1em] uppercase px-3 py-2 bg-[#FAFAF8] outline-none focus:border-[#1C1C1C] transition-colors"
         >
           {sortOptions.map((o) => (
             <option key={o.key} value={o.key}>{o.label}</option>
@@ -74,7 +73,7 @@ function BoutiqueContent() {
       </div>
 
       {/* Résultats */}
-      <p className="text-[10px] text-[#8A7A6A] tracking-[0.1em] uppercase mb-8">
+      <p className="text-[10px] text-[#7A7670] tracking-[0.1em] uppercase mb-8">
         {filtered.length} produit{filtered.length > 1 ? "s" : ""}
       </p>
 
@@ -89,7 +88,7 @@ function BoutiqueContent() {
 
 export default function BoutiquePage() {
   return (
-    <Suspense fallback={<div className="max-w-7xl mx-auto px-6 py-14 text-[#8A7A6A] text-sm">Chargement…</div>}>
+    <Suspense fallback={<div className="max-w-7xl mx-auto px-6 py-14 text-[#7A7670] text-sm">Chargement…</div>}>
       <BoutiqueContent />
     </Suspense>
   );

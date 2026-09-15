@@ -3,18 +3,18 @@ import { Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A1410] text-white mt-0">
+    <footer className="bg-[#1C1C1C] text-white mt-0">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Col 1 – Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
               <span className="text-[13px] font-black tracking-[0.3em] uppercase text-white">
-                Sellier Paris
+                Velours Paris
               </span>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-              Maroquinerie française d'exception. Cuir pleine fleur, fabrication artisanale, pièces pensées pour durer une vie.
+              Peignoirs homme et femme d'exception. Fabrication européenne, matières nobles, livraison gratuite en France.
             </p>
             <div className="flex items-center gap-2">
               {["VISA", "MC", "CB"].map((c) => (
@@ -30,9 +30,8 @@ export default function Footer() {
             <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.25em] mb-5">Collections</p>
             <ul className="space-y-3">
               {[
-                { href: "/boutique?collection=ceintures", label: "Ceintures" },
-                { href: "/boutique?collection=sacs", label: "Sacs" },
-                { href: "/boutique?collection=petite-maroquinerie", label: "Petite Maroquinerie" },
+                { href: "/boutique?collection=homme", label: "Collection Homme" },
+                { href: "/boutique?collection=femme", label: "Collection Femme" },
                 { href: "/boutique", label: "Toute la boutique" },
               ].map((l) => (
                 <li key={l.href}>
@@ -64,8 +63,8 @@ export default function Footer() {
             </ul>
             <div className="flex items-center gap-2 text-white/50 text-sm">
               <Mail size={13} />
-              <a href="mailto:contact@sellier-paris.com" className="hover:text-white transition-colors">
-                contact@sellier-paris.com
+              <a href="mailto:contact@velours-paris.com" className="hover:text-white transition-colors">
+                contact@velours-paris.com
               </a>
             </div>
           </div>
@@ -74,7 +73,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10 py-5 px-6">
         <p className="text-center text-white/30 text-xs tracking-[0.1em]">
-          © 2025 Sellier Paris — Tous droits réservés
+          © 2026 Velours Paris — Tous droits réservés
         </p>
       </div>
     </footer>

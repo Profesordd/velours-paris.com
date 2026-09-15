@@ -5,15 +5,14 @@ import ProductCard from "@/components/ui/ProductCard";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { ArrowRight, Truck, RotateCcw, Shield } from "lucide-react";
 
-// All images verified — zero brand logos
 const U = (id: string, w = 800) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=85`;
 
 // Verified CDN IDs
-const HERO   = U("1679759022456-a7eae2257ba2", 1920); // multiple belts on wooden pole
-const EDITO1 = U("1664286074176-5206ee5dc878");        // leather belt on black surface
-const EDITO2 = U("1473188588951-666fce8e7c68");        // brown leather satchel, no brand
-const EDITO3 = U("1629958317491-bd40c9fa757e");        // black leather bifold wallet
+const HERO   = U("1535272126276-63decfb8c4d7", 1920); // woman white bathrobe on terrace
+const EDITO1 = U("1623120594168-a6d35474043b");        // man in bathrobe with drink
+const EDITO2 = U("1770294759101-fae1377d4d34");        // woman in white bathrobe wooden wall
+const EDITO3 = U("1609535895148-cf9f5c446290");        // smiling woman bathrobe with mug
 
 export default function HomePage() {
   const bestSellers = products.filter((p) => p.badge === "BESTSELLER");
@@ -24,36 +23,36 @@ export default function HomePage() {
       <section className="relative h-screen flex items-center md:items-end overflow-hidden">
         <Image
           src={HERO}
-          alt="Sellier Paris"
+          alt="Velours Paris"
           fill
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10" />
 
         <div className="relative z-10 px-8 md:px-16 lg:px-24 pb-0 md:pb-28 w-full max-w-4xl">
           <p className="fade-in-up d200 text-[9px] font-semibold tracking-[0.4em] uppercase text-white/50 mb-7">
-            Sellier Paris — Maroquinerie d'exception
+            Velours Paris — Peignoirs d'exception
           </p>
           <h1 className="fade-in-up d400 text-[clamp(3rem,8vw,7rem)] font-black text-white leading-[0.88] tracking-tight mb-8">
-            L'ART<br />DU<br />CUIR.
+            L'ART<br />DE LA<br />DOUCEUR.
           </h1>
           <p className="fade-in-up d600 text-white/65 text-sm md:text-base max-w-sm mb-10 leading-relaxed">
-            Ceintures, sacs et petite maroquinerie en cuir pleine fleur.<br />
-            Fabriqués à la main en Europe, pour durer une vie.
+            Peignoirs homme et femme en coton, velours et satin.<br />
+            Fabriqués en Europe, pour s'accorder du temps.
           </p>
           <div className="fade-in-up d800 flex flex-wrap gap-4">
             <Link
               href="/boutique"
-              className="bg-white text-[#1A1410] px-8 py-3.5 font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-[#F0EBE4] transition-colors inline-flex items-center gap-2"
+              className="bg-white text-[#1C1C1C] px-8 py-3.5 font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-[#F5F1E8] transition-colors inline-flex items-center gap-2"
             >
               Découvrir la collection <ArrowRight size={12} />
             </Link>
             <Link
-              href="/boutique?collection=ceintures"
+              href="/boutique?collection=femme"
               className="border border-white/40 text-white px-8 py-3.5 font-medium text-[10px] tracking-[0.2em] uppercase hover:border-white transition-colors"
             >
-              Ceintures
+              Collection Femme
             </Link>
           </div>
         </div>
@@ -62,7 +61,7 @@ export default function HomePage() {
           <div className="ticker-content text-white/40 text-[9px] uppercase tracking-[0.3em] font-medium">
             {Array.from({ length: 8 }).map((_, i) => (
               <span key={i} className="mr-16">
-                Sellier Paris &nbsp;·&nbsp; Cuir Pleine Fleur &nbsp;·&nbsp; Fabrication Européenne &nbsp;·&nbsp; Livraison Offerte &nbsp;·&nbsp; Garanti à Vie
+                Velours Paris &nbsp;·&nbsp; Coton Éponge &nbsp;·&nbsp; Fabrication Européenne &nbsp;·&nbsp; Livraison Offerte &nbsp;·&nbsp; Retours Gratuits
               </span>
             ))}
           </div>
@@ -70,16 +69,16 @@ export default function HomePage() {
       </section>
 
       {/* ── RÉASSURANCE ──────────────────────────────────────────── */}
-      <section className="border-b border-[#E5DDD0] bg-[#F7F1E8]">
+      <section className="border-b border-[#E8E3DA] bg-[#F5F1E8]">
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E5DDD0]">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E8E3DA]">
             {[
               { icon: <Truck size={14} strokeWidth={1.5} />, label: "Livraison gratuite en France" },
               { icon: <RotateCcw size={14} strokeWidth={1.5} />, label: "Retours gratuits sous 30 jours" },
               { icon: <Shield size={14} strokeWidth={1.5} />, label: "Paiement 100 % sécurisé" },
             ].map((item) => (
-              <div key={item.label} className="flex items-center justify-center gap-2.5 py-3 sm:py-2 text-[10px] tracking-[0.12em] uppercase font-medium text-[#8A7A6A]">
-                <span className="text-[#C08040]">{item.icon}</span>
+              <div key={item.label} className="flex items-center justify-center gap-2.5 py-3 sm:py-2 text-[10px] tracking-[0.12em] uppercase font-medium text-[#7A7670]">
+                <span className="text-[#B8963E]">{item.icon}</span>
                 {item.label}
               </div>
             ))}
@@ -91,22 +90,22 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#C08040] mb-3">
+            <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-3">
               Nos incontournables
             </p>
-            <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-black text-[#1A1410] leading-tight">
+            <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-black text-[#1C1C1C] leading-tight">
               Les Bestsellers
             </h2>
           </div>
           <Link
             href="/boutique"
-            className="hidden md:flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase font-semibold text-[#8A7A6A] hover:text-[#1A1410] transition-colors"
+            className="hidden md:flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase font-semibold text-[#7A7670] hover:text-[#1C1C1C] transition-colors"
           >
             Tout voir <ArrowRight size={12} />
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-8">
           {bestSellers.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}
@@ -115,72 +114,72 @@ export default function HomePage() {
         <div className="text-center mt-12">
           <Link
             href="/boutique"
-            className="inline-flex items-center gap-2 border border-[#1A1410] text-[#1A1410] px-10 py-3.5 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-[#1A1410] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 border border-[#1C1C1C] text-[#1C1C1C] px-10 py-3.5 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-[#1C1C1C] hover:text-white transition-colors"
           >
             Voir toute la boutique <ArrowRight size={12} />
           </Link>
         </div>
       </section>
 
-      {/* ── ÉDITO 1 : Ceintures ──────────────────────────────────── */}
-      <section className="bg-[#F7F1E8] border-y border-[#E5DDD0]">
+      {/* ── ÉDITO 1 : Homme ──────────────────────────────────────── */}
+      <section className="bg-[#F5F1E8] border-y border-[#E8E3DA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 min-h-[560px]">
             <div className="relative min-h-[400px] md:min-h-full overflow-hidden">
               <Image
                 src={EDITO1}
-                alt="Ceintures cuir"
+                alt="Collection Homme"
                 fill
                 className="object-cover object-center"
                 unoptimized
               />
             </div>
-            <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-[#F7F1E8]">
-              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#C08040] mb-5">Ceintures</p>
-              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1A1410] leading-tight mb-6">
-                La signature<br />de l'élégance.
+            <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-[#F5F1E8]">
+              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Collection Homme</p>
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1C1C1C] leading-tight mb-6">
+                Le confort<br />sans compromis.
               </h2>
-              <p className="text-[#8A7A6A] text-sm leading-relaxed mb-8 max-w-sm">
-                Tannées à la végétale, cousues main, boucles en laiton massif —
-                nos ceintures sont conçues pour vieillir avec vous et développer
-                une patine unique au fil du temps.
+              <p className="text-[#7A7670] text-sm leading-relaxed mb-8 max-w-sm">
+                Éponge épaisse, waffle léger, velours nuit, kimono lin —
+                nos peignoirs homme sont conçus pour transformer chaque moment
+                après la douche en rituel de bien-être.
               </p>
               <Link
-                href="/boutique?collection=ceintures"
-                className="self-start inline-flex items-center gap-2 bg-[#1A1410] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity"
+                href="/boutique?collection=homme"
+                className="self-start inline-flex items-center gap-2 bg-[#1C1C1C] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity"
               >
-                Voir les ceintures <ArrowRight size={12} />
+                Voir la collection <ArrowRight size={12} />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── ÉDITO 2 : Sacs ───────────────────────────────────────── */}
-      <section className="border-b border-[#E5DDD0]">
+      {/* ── ÉDITO 2 : Femme ──────────────────────────────────────── */}
+      <section className="border-b border-[#E8E3DA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 min-h-[560px]">
             <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-white order-2 md:order-1">
-              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#C08040] mb-5">Sacs</p>
-              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1A1410] leading-tight mb-6">
-                Pensés pour<br />l'essentiel.
+              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Collection Femme</p>
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1C1C1C] leading-tight mb-6">
+                Douceur,<br />légèreté, style.
               </h2>
-              <p className="text-[#8A7A6A] text-sm leading-relaxed mb-8 max-w-sm">
-                Cabas, sacs à main, week-end — chaque modèle est fabriqué en cuir
-                pleine fleur de qualité supérieure, avec des doublures nobles et
-                des ferrures en laiton ou acier inoxydable.
+              <p className="text-[#7A7670] text-sm leading-relaxed mb-8 max-w-sm">
+                Coton douceur, satin ivoire, velours long, peignoir court —
+                chaque modèle est une invitation à prendre soin de soi.
+                Des matières nobles, des coupes pensées pour les femmes.
               </p>
               <Link
-                href="/boutique?collection=sacs"
-                className="self-start inline-flex items-center gap-2 border border-[#1A1410] text-[#1A1410] text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:bg-[#1A1410] hover:text-white transition-colors"
+                href="/boutique?collection=femme"
+                className="self-start inline-flex items-center gap-2 border border-[#1C1C1C] text-[#1C1C1C] text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:bg-[#1C1C1C] hover:text-white transition-colors"
               >
-                Voir les sacs <ArrowRight size={12} />
+                Voir la collection <ArrowRight size={12} />
               </Link>
             </div>
             <div className="relative min-h-[400px] md:min-h-full overflow-hidden order-1 md:order-2">
               <Image
                 src={EDITO2}
-                alt="Sacs cuir"
+                alt="Collection Femme"
                 fill
                 className="object-cover object-center"
                 unoptimized
@@ -190,34 +189,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── ÉDITO 3 : Petite Maroquinerie ────────────────────────── */}
-      <section className="bg-[#F7F1E8] border-b border-[#E5DDD0]">
+      {/* ── ÉDITO 3 : Rituel ─────────────────────────────────────── */}
+      <section className="bg-[#F5F1E8] border-b border-[#E8E3DA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 min-h-[560px]">
             <div className="relative min-h-[400px] md:min-h-full overflow-hidden">
               <Image
                 src={EDITO3}
-                alt="Petite Maroquinerie"
+                alt="Rituel bien-être"
                 fill
                 className="object-cover object-center"
                 unoptimized
               />
             </div>
-            <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-[#F7F1E8]">
-              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#C08040] mb-5">Petite Maroquinerie</p>
-              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1A1410] leading-tight mb-6">
-                L'art<br />du détail.
+            <div className="flex flex-col justify-center px-10 md:px-16 lg:px-24 py-16 bg-[#F5F1E8]">
+              <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-5">Notre philosophie</p>
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-black text-[#1C1C1C] leading-tight mb-6">
+                S'accorder<br />du temps.
               </h2>
-              <p className="text-[#8A7A6A] text-sm leading-relaxed mb-8 max-w-sm">
-                Portefeuilles ultra-slim, porte-cartes végétan, carnets en cuir —
-                les petites pièces qui font la différence. Chacune tient dans la poche
-                et dure une décennie.
+              <p className="text-[#7A7670] text-sm leading-relaxed mb-8 max-w-sm">
+                Un bon peignoir, c'est le premier geste d'une journée posée.
+                Chez Velours Paris, chaque pièce est pensée pour durer,
+                envelopper et réchauffer — bien au-delà de la salle de bain.
               </p>
               <Link
-                href="/boutique?collection=petite-maroquinerie"
-                className="self-start inline-flex items-center gap-2 bg-[#1A1410] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity"
+                href="/boutique"
+                className="self-start inline-flex items-center gap-2 bg-[#1C1C1C] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-8 py-3.5 hover:opacity-75 transition-opacity"
               >
-                Voir la collection <ArrowRight size={12} />
+                Découvrir tous les modèles <ArrowRight size={12} />
               </Link>
             </div>
           </div>
@@ -227,24 +226,24 @@ export default function HomePage() {
       {/* ── SAVOIR-FAIRE ─────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="text-center mb-14">
-          <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#C08040] mb-3">Notre engagement</p>
-          <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-black text-[#1A1410]">Le Savoir-Faire Sellier Paris</h2>
+          <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-3">Notre engagement</p>
+          <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-black text-[#1C1C1C]">Le Savoir-Faire Velours Paris</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { label: "Cuir Pleine Fleur", desc: "La partie la plus noble du cuir, non rectifiée. Résistance maximale, grain naturel préservé." },
-            { label: "Tannage Végétal", desc: "Tanné aux écorces de chêne et châtaignier selon les méthodes traditionnelles toscanes et françaises." },
-            { label: "Couture Sellier", desc: "Point de sellier à deux fils croisés — si un fil casse, l'autre tient. La couture la plus solide qui soit." },
-            { label: "Garantie À Vie", desc: "Nos ceintures sont garanties à vie. Nos sacs et petite maroquinerie sont garantis 2 ans." },
+            { label: "Matières Nobles", desc: "Coton éponge 500 g/m², velours côtelé, satin modal, lin — uniquement des textiles de premier choix." },
+            { label: "Fabrication Européenne", desc: "Nos peignoirs sont produits dans des ateliers en Europe selon des normes strictes de qualité et d'éthique." },
+            { label: "Coupe Soignée", desc: "Chaque modèle est coupé pour s'adapter au corps : col châle, ceinture réglable, poches profondes." },
+            { label: "Garantie 30 jours", desc: "Vous disposez de 30 jours pour retourner votre peignoir, sans questions. Retours entièrement gratuits." },
           ].map((v) => (
             <div key={v.label} className="text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-10 h-10 border border-[#E5DDD0] flex items-center justify-center">
-                  <span className="text-[#C08040] text-base font-black">✦</span>
+                <div className="w-10 h-10 border border-[#E8E3DA] flex items-center justify-center">
+                  <span className="text-[#B8963E] text-base font-black">✦</span>
                 </div>
               </div>
-              <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#1A1410] mb-2">{v.label}</p>
-              <p className="text-[#8A7A6A] text-xs leading-relaxed">{v.desc}</p>
+              <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#1C1C1C] mb-2">{v.label}</p>
+              <p className="text-[#7A7670] text-xs leading-relaxed">{v.desc}</p>
             </div>
           ))}
         </div>
@@ -253,14 +252,14 @@ export default function HomePage() {
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <section className="max-w-2xl mx-auto px-6 py-20">
         <div className="text-center mb-10">
-          <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#C08040] mb-3">Support</p>
-          <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-black text-[#1A1410]">Questions fréquentes</h2>
+          <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-[#B8963E] mb-3">Support</p>
+          <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-black text-[#1C1C1C]">Questions fréquentes</h2>
         </div>
         <FAQAccordion />
         <div className="text-center mt-10">
-          <p className="text-[#8A7A6A] text-sm">
+          <p className="text-[#7A7670] text-sm">
             Vous n'avez pas trouvé votre réponse ?{" "}
-            <Link href="/contact" className="text-[#1A1410] font-semibold underline underline-offset-4 hover:opacity-60">
+            <Link href="/contact" className="text-[#1C1C1C] font-semibold underline underline-offset-4 hover:opacity-60">
               Contactez-nous
             </Link>
           </p>
