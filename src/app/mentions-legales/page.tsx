@@ -23,8 +23,13 @@ export default function MentionsLegalesPage() {
             Éditeur du site
           </h2>
           <div className="space-y-1.5">
-            <p><span className="font-semibold text-[#1C1C1C]">Raison sociale :</span> Velours Paris</p>
-            <p><span className="font-semibold text-[#1C1C1C]">Forme juridique :</span> SASU</p>
+            <p><span className="font-semibold text-[#1C1C1C]">Nom commercial :</span> Velours Paris</p>
+            <p><span className="font-semibold text-[#1C1C1C]">Exploitant :</span> GUIDEZ KYLLIANE RUBY</p>
+            <p><span className="font-semibold text-[#1C1C1C]">Forme juridique :</span> Entrepreneur individuel</p>
+            <p><span className="font-semibold text-[#1C1C1C]">SIREN :</span> 108 908 559</p>
+            <p><span className="font-semibold text-[#1C1C1C]">SIRET :</span> 108 908 559 00017</p>
+            <p><span className="font-semibold text-[#1C1C1C]">Code APE :</span> 47.91B — Vente à distance sur catalogue spécialisé</p>
+            <p><span className="font-semibold text-[#1C1C1C]">Adresse :</span> APP 1, 44 Avenue du Sénateur Girard, 59300 Valenciennes</p>
           </div>
         </section>
 

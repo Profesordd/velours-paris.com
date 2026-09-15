@@ -14,7 +14,15 @@ const EDITO2 = U("1770294759101-fae1377d4d34");
 const EDITO3 = U("1609535895148-cf9f5c446290");
 
 export default function HomePage() {
-  const bestSellers = products.filter((p) => p.badge === "BESTSELLER");
+  const bestSellerSlugs = [
+    "peignoir-moelleux-blanc",
+    "peignoir-moelleux-vieux-rose",
+    "peignoir-nid-abeille-terracotta",
+    "peignoir-velours-famiglia-ecru",
+  ];
+  const bestSellers = bestSellerSlugs
+    .map((slug) => products.find((p) => p.slug === slug))
+    .filter(Boolean) as typeof products;
   const newArrivals = products.filter((p) => p.badge === "NOUVEAU");
 
   return (
