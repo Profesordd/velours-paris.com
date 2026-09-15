@@ -23,7 +23,6 @@ export default function MentionsLegalesPage() {
             Éditeur du site
           </h2>
           <div className="space-y-1.5">
-            <p><span className="font-semibold text-[#1C1C1C]">Nom commercial :</span> Velours Paris</p>
             <p><span className="font-semibold text-[#1C1C1C]">Exploitant :</span> GUIDEZ KYLLIANE RUBY</p>
             <p><span className="font-semibold text-[#1C1C1C]">Forme juridique :</span> Entrepreneur individuel</p>
             <p><span className="font-semibold text-[#1C1C1C]">SIREN :</span> 108 908 559</p>
