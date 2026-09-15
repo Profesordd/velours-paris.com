@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { CartItem } from "@/lib/types";
 
-const CART_KEY = "sellier_cart";
+const CART_KEY = "velours_cart";
 
 function loadCart(): CartItem[] {
   if (typeof window === "undefined") return [];
